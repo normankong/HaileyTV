@@ -2,7 +2,7 @@
 
 This is a mini app run on nodejs / omxplayer to play pre-downloaded Youtube video. Inspired by the Android TV Project (http://blog.donaldderek.com/).
 
-# Feature Supports :
+## Feature Supports :
 - Download Youtube Video as local repository
 - Support Multiple Channel 
 - Parent Control to auto stop the play box after predefined on time
@@ -29,7 +29,7 @@ This is a mini app run on nodejs / omxplayer to play pre-downloaded Youtube vide
       - Keyword
       - Youtube URL
 
-# Installation
+## Installation
   1) Install the youtube-dl binary to your RPi
      - sudo apt-get youtube-dl 
   
@@ -51,6 +51,8 @@ This is a mini app run on nodejs / omxplayer to play pre-downloaded Youtube vide
 
 ## Recommendation
   Recommend to use Process Manager (e.g. PM2) to manage the application.
+     
+        http://pm2.keymetrics.io/    
   
 ## Known Issue
   If the RPI was idle for several period of time, the HDMI signal cannot be sent to TV. Restart of the RPi is necessary.
