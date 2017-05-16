@@ -129,13 +129,13 @@ socket.on('connect', function(data)
 });
 
 // Song Control
-$(".start").on("click",function(){
+$(".startSong").on("click",function(){
 	var json = {action : "start"}
 	console.log("Emitting : ", json);
 	socket.emit('songcontrol', json);
 });
 
-$(".stop").on("click",function(){
+$(".stopSong").on("click",function(){
 	var json = {action : "stop"}
 	console.log("Emitting : ", json);
 	socket.emit('songcontrol', json);
