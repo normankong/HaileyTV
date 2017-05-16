@@ -1,0 +1,34 @@
+{
+  "name": "my_hailey_super",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node --debug app.js"
+  },
+  "dependencies": {
+    "express": "3.1.1",
+    "jade": "*",
+    "socket.io": "1.7.2",
+    "node-omxplayer": "*",
+    "moment": "*"
+  },
+  "description": "For Youtube enable Pi server",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normankong/MyHaileySuper.git"
+  },
+  "keywords": [
+    "Raspberry",
+    "PI",
+    "Youtube"
+  ],
+  "author": "Norman Kong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/normankong/MyHaileySuper/issues"
+  },
+  "homepage": "https://github.com/normankong/MyHaileySuper#readme"
+}

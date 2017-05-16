@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>My Hailey Super</title>
+		<link rel="apple-touch-icon"		  href="images/startup.gif"/>
+		<link rel="apple-touch-startup-image" href="images/splash.png">
+		
+		<meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-title" content="Remote">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="stylesheet" type="text/css" href="/css/tv.css"				/>
+		<link rel="stylesheet" type="text/css" href="/css/jquery.mmenu.all.css" />
+			                                  
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"			/>
+		<link rel="stylesheet" type="text/css" href="css/featherlight.min.css"	/>
+
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/js/vendor/hammer.min.js"></script>
+		<script type="text/javascript" src="/js/vendor/jquery-2.2.0.js"></script>
+		<script type="text/javascript" src="/js/vendor/jquery.mmenu.all.min.js"></script>
+		<script type="text/javascript" src="/js/vendor/mustache.js"></script>
+		<script type="text/javascript" src="/js/vendor/jquery.notify.js"></script>
+		<script type="text/javascript" src="/js/vendor/featherlight.min.js" charset="utf-8"></script>	
+
+		<script type="text/javascript" src="/js/util.js"></script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header" class="header Fixed">
+				<a href="#menu"><span></span></a>
+				<div id="notification">My Hailey Super</div>
+			</div>
+
+			<div class="content">
+				<div id="searchPanel">
+					<div class="search">
+					  <input id="searchBox" type="text" placeholder="Search Youtube Keyword / Link">
+					</div>
+					<div id="result_content"  class="search" style="text-align:center; height: 500px; " ></div>
+				</div>
+			</div>
+
+			<div id="footer" class="footer Fixed">
+				<span id="channelName" ></span>
+			</div>
+
+			<nav id="menu">
+				<ul>
+					<li id="menu_channel"	class="Divider">Channel</li>
+					<li						class="Divider">System</li>
+					<li><a class="create"    href="#"><img src="/images/create.gif"     style="height:25px"></img></a></li>
+					<li><a class="delete"    href="#"><img src="/images/delete.gif"     style="height:25px"></img></a></li>
+					<li><a href="/admin.html"><img src="/images/back.gif" style="height:25px"></img></a></li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+
+	<!-- Template -->
+	<script id="videoTpl" type="text/template">
+		<div>
+			<a class="view_youtube" data-name={{data}}><img class="tile-image big-illustration" src="{{thumbnail}}"/></a>
+			<h3 class="tile-title">{{songname}}</h3>
+			<a class="btn button btn-primary btn-large btn-block watch" data-name={{data}}>Download</a>
+		</div>
+	</script>
+	<script id="channelTpl" type="text/template">
+		<li class="channel {{className}}"><a class="channelLink" href="#" data-name="{{data}}"><img src="/images/channelIcon.gif" style="width:20px" />{{channelName}}</a></li>
+	</script>
+
+	<!-- Init Script -->
+	<script type="text/javascript" src="/js/download.js"></script>
+</html>

@@ -27,7 +27,6 @@ coverage
 build/Release
 
 # Dependency directories
-public/channel
 node_modules
 jspm_packages
 

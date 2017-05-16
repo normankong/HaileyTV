@@ -1,0 +1,9 @@
+{
+    "VIDEO_BASE_DIR"        : "public/channel",
+    "DEFAULT_CHANNEL"       : "Hailey",
+    "MAXIMUM_PLAY_TIME"     : 360000,
+    "IS_AUTO_PLAY"          : false,
+    "IS_DEBUG"              : false,
+    "YOUTUBE_API_KEY"       : "PLEASE APPLY YOUR OWN GOOGLE API KEY",
+    "HTTP_PORT_NUMBER"      : 8080
+}
