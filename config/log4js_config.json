@@ -1,0 +1,42 @@
+{
+	"replaceConsole": true,
+	"appenders": 
+	[
+		{
+			"type": "console"
+		},
+		{
+			"type"      : "logLevelFilter",
+			"level"     : "INFO",
+			"appender": 
+			{
+				"type"      : "file",
+				"filename"  : "logs/system.log",
+				"layout": 
+				{
+					"type": "colored",
+					"pattern": "[%d] %-5p <%c> %m"
+				},
+				"maxLogSize": 20480,
+				"backups"   : 5
+			}
+		},
+		{
+			"category"  : "SongControlLogger",
+			"type"      : "logLevelFilter",
+			"level"     : "DEBUG",
+			"appender": 
+			{
+				"type"      : "file",
+				"filename"  : "logs/song_control.log",
+				"layout": 
+				{
+					"type": "colored",
+					"pattern": "[%d] %-5p <%c> %m"
+				},
+				"maxLogSize": 20480,
+				"backups"   : 5
+			}
+		}
+	]
+}

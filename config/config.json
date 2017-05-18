@@ -5,5 +5,6 @@
     "IS_AUTO_PLAY"          : false,
     "IS_DEBUG"              : false,
     "YOUTUBE_API_KEY"       : "PLEASE APPLY YOUR OWN GOOGLE API KEY",
-    "HTTP_PORT_NUMBER"      : 8080
+    "HTTP_PORT_NUMBER"      : 8080,
+	"LOG4JS_CONFIG"         : "config/log4js_config.json"
 }

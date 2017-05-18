@@ -11,7 +11,8 @@
     "jade": "*",
     "socket.io": "1.7.2",
     "node-omxplayer": "*",
-    "moment": "*"
+    "moment": "*",
+    "log4js": "*"
   },
   "description": "For Youtube enable Pi server",
   "main": "app.js",

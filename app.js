@@ -10,6 +10,10 @@ var songControl = require('./lib/songControl.js');
 var comControl  = require('./lib/comControl.js');
 var sysControl  = require('./lib/sysControl.js');
 var config      = require("./config/config.json");
+var log4js		= require('log4js')
+
+log4js.configure(config.LOG4JS_CONFIG);
+var logger		= log4js.getLogger();
 
 // All environments
 app.set('port', config.HTTP_PORT_NUMBER);
@@ -28,7 +32,7 @@ app.get('/', function (req, res)
 // Initialize and make sure Port is reachable
 server.listen(app.get('port'), function()
 {
-	console.log('My Hailey Super started on port ' + app.get('port'));
+	logger.info('My Hailey Super started on port ' + app.get('port'));
 	comControl.init();
 	sysControl.init();
 	songControl.init();
@@ -53,9 +57,9 @@ io.sockets.on('connection', function (socket)
 
 	socket.on("syscontrol", function(data)
 	{
-		console.log("=============================================");
-		console.log("Incoming System Control Request", data);
-		console.log("=============================================");
+		logger.info("=============================================");
+		logger.info("Incoming System Control Request", data);
+		logger.info("=============================================");
 
 		// Trigger the Proceed. Send Status Update if necessary
 		var isStatusUpdate = sysControl.proceed(data, socket);
@@ -66,9 +70,9 @@ io.sockets.on('connection', function (socket)
 
 	socket.on("songcontrol", function(data)
 	{
-		console.log("=============================================");
-		console.log("Incoming Song Control Request", data);
-		console.log("=============================================");
+		logger.info("=============================================");
+		logger.info("Incoming Song Control Request", data);
+		logger.info("=============================================");
 
 		// Trigger the Proceed. Send Status Update if necessary
 		var isStatusUpdate = songControl.proceed(data, socket);
