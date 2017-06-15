@@ -52,7 +52,7 @@ io.sockets.on('connection', function (socket)
 		comControl.connect(socket);
 
 		// Update Current System Status
-		updateSystemStatus(socket);
+		comControl.broadcastStatus(socket);
 	});
 
 	socket.on("syscontrol", function(data)
@@ -65,7 +65,7 @@ io.sockets.on('connection', function (socket)
 		var isStatusUpdate = sysControl.proceed(data, socket);
 
 		// Update Current System Status if necessary
-		if (isStatusUpdate) updateSystemStatus();
+		if (isStatusUpdate) comControl.broadcastStatus();
 	});
 
 	socket.on("songcontrol", function(data)
@@ -78,12 +78,6 @@ io.sockets.on('connection', function (socket)
 		var isStatusUpdate = songControl.proceed(data, socket);
 
 		// Update Current System Status if necessary
-		if (isStatusUpdate) updateSystemStatus();
+		if (isStatusUpdate) comControl.broadcastStatus();
 	});
 });
-
-function updateSystemStatus(socket)
-{
-	var systemStatus = songControl.getSongControlStatus();
-	comControl.broadcast("SystemStatus", systemStatus, socket);
-}

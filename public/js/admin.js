@@ -1,13 +1,11 @@
 var host	= document.location.origin;
 var socket  = io.connect(host);
 
-var GOOGLE_API_KEY = "AIzaSyD0EGAzxEMcPu4Njt-GKwZzLNDgGVCw06o";
-
 socket.on('connect', function(data)
 {
 	socket.emit('RemoteController',{action:"initialize"});
 
-	socket.on("SystemStatus", function(data)
+	socket.on("Status", function(data)
 	{
 		console.log("=============================================");
 		console.log("Incoming System Status");
@@ -86,6 +84,10 @@ socket.on('connect', function(data)
 		var channelName = data.channelName;
 		$("#channelName").html("Channel : " + channelName);
 		$("#channelName").attr("ChannelName", channelName);
+
+		// Show Temperature
+		var temperature = data.temperature;
+		$("#temperature").html("System : " + temperature + " C");
 
 		// Display Channel List
 		var node = $('#menu_channel').next()

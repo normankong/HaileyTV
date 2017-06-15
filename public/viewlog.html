@@ -32,69 +32,38 @@
 		<script type="text/javascript" src="/js/vendor/featherlight.min.js" charset="utf-8"></script>	
 		<script type="text/javascript" src="/js/vendor/flipclock.js"></script>		
 		
-		<script type="text/javascript" src="/js/util.js"></script>
+		<script type="text/javascript" src="/js/vendor/ansi_up.js"></script>
+		<script type="text/javascript" src="/js/vendor/jquery-logtail.js"></script>
 
 	</head>
 	<body>
 		<div id="page">
-			<div id="header" class="header Fixed">
+			<div id="header" class="header Fixed playing">
 				<a href="#menu"><span></span></a>
 				<div id="notification">My Hailey Super</div>
 			</div>
 
-			<div class="content" >
-				<div id="airTime">Air Time</div>
-				<div class="clock flipClock" ></div>
-				<div id="songpanel_content"></div>
+			<div >
+				<br/>
+				<br/>
+				<pre id="data" style="font-size: 10px ;white-space: pre"> Loading...</pre>
 			</div>
 
-			<div id="footer" class="footer Fixed">
+			<div id="footer" class="footer Fixed playing">
 				<span id="channelName" ></span>
 			</div>
 
 			<nav id="menu">
 				<ul>
-					<li id="menu_channel"	class="Divider">Channel</li>
 					<li						class="Divider">System</li>
-					<li><a class="startSong" href="#"><img src="/images/start.gif"      style="height:25px"></img></a></li>
-					<li><a class="stopSong"  href="#"><img src="/images/stop.gif"	    style="height:25px"></img></a></li>
-					<li><a class="create"    href="#"><img src="/images/create.gif"     style="height:25px"></img></a></li>
-					<li><a class="delete"    href="#"><img src="/images/delete.gif"     style="height:25px"></img></a></li>
-					<li><a class="reboot"    href="#"><img src="/images/reboot.gif"     style="height:25px"></img></a></li>
-					<li><a class="shutdown"  href="#"><img src="/images/shutdown.gif"   style="height:25px"></img></a></li>
-					<li><a href="viewlog.html"		 ><img src="/images/viewlog.gif"    style="height:25px"></img></a></li>
-					<li><a href="download.html"		 ><img src="/images/update.gif"     style="height:25px"></img></a></li>
+					<li><a href="admin.html"		 ><img src="/images/admin.gif"      style="height:25px"></img></a></li>
 					<li><a href="index.html"         ><img src="/images/back.gif"       style="height:25px"></img></a></li>
 					<li	id="temperature" class="Divider"></li>
 				</ul>
 			</nav>
 		</div>
-	</body>
- 
-	<div id="dialog-form" title="Create new Channel">
-	  <br/>
-	  <form>
-		<fieldset>
-		  <input type="text" id="newChannelName" value="" placeholder="Enter Channel Name" class="text ui-widget-content ui-corner-all">
-		  <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-		</fieldset>
-	  </form>
-	</div>
-
-	<!-- Template -->
-	<script id="videoTpl" type="text/template">
-		<div class="watch block" data-name="{{data}}">
-			<div class="tile {{className}}">
-				<img class="big-illustration" src="{{thumbnail}}" />			
-				<h3 class="tile-title">{{songname}}</h3>
-			</div>
-		</div>
-	</script>
-
-	<script id="channelTpl" type="text/template">
-		<li class="channel {{className}}"><a class="channelLink" href="#" data-name="{{data}}"><img src="/images/channelIcon.gif" style="width:20px" />{{channelName}}</a></li>
-	</script>
+    </body>
 
 	<!-- Init Script -->
-	<script type="text/javascript" src="/js/admin.js"></script>
+	<script type="text/javascript" src="/js/viewlog.js"></script>
 </html>

@@ -5,7 +5,7 @@ socket.on('connect', function(data)
 {
 	socket.emit('RemoteController',{action:"initialize"});
 
-	socket.on("SystemStatus", function(data)
+	socket.on("Status", function(data)
 	{
 		console.log("=============================================");
 		console.log("Incoming System Status");
@@ -19,6 +19,10 @@ socket.on('connect', function(data)
 		// Show Channel Name
 		var channelName = data.channelName;
 		$("#channelName").html("Channel : " + channelName);
+
+		// Show Temperature
+		var temperature = data.temperature;
+		$("#temperature").html("System : " + temperature + " C");
 
 		// Display the Song List under this Channel 
 		$('#songpanel_content').empty();

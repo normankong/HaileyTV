@@ -17,10 +17,13 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"			/>
 		<link rel="stylesheet" type="text/css" href="css/featherlight.min.css"	/>
 
+ 	    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" src="/js/vendor/hammer.min.js"></script>
 		<script type="text/javascript" src="/js/vendor/jquery-2.2.0.js"></script>
 		<script type="text/javascript" src="/js/vendor/jquery.mmenu.all.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="/js/vendor/mustache.js"></script>
 		<script type="text/javascript" src="/js/vendor/jquery.notify.js"></script>
 		<script type="text/javascript" src="/js/vendor/featherlight.min.js" charset="utf-8"></script>	
@@ -55,10 +58,21 @@
 					<li><a class="delete"    href="#"><img src="/images/delete.gif"     style="height:25px"></img></a></li>
 					<li><a href="admin.html"		 ><img src="/images/admin.gif"      style="height:25px"></img></a></li>
 					<li><a href="index.html"         ><img src="/images/back.gif"       style="height:25px"></img></a></li>
+					<li	id="temperature" class="Divider"></li>
 				</ul>
 			</nav>
 		</div>
 	</body>
+
+	<div id="dialog-form" title="Create new Channel">
+	  <br/>
+	  <form>
+		<fieldset>
+		  <input type="text" id="newChannelName" value="" placeholder="Enter Channel Name" class="text ui-widget-content ui-corner-all">
+		  <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	  </form>
+	</div>
 
 	<!-- Template -->
 	<script id="videoTpl" type="text/template">

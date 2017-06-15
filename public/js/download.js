@@ -39,7 +39,6 @@ socket.on('connect', function(data)
 					var videoId		= (item.id.videoId != null) ? item.id.videoId : item.id;
 					var songname	= item.snippet.title.substring(0,100);
 					var thumbnail	= item.snippet.thumbnails.medium.url;
-//					var filename	= item.snippet.title.replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").substring(0,100);
 					var filename	= item.snippet.title.replace( /[<>:\"\/\\|?*]+/g, "" ).replace(/\s+/g, "_").substring(0,100);
 					var url			= "https://www.youtube.com/embed/" + videoId;
 
@@ -78,8 +77,11 @@ socket.on('connect', function(data)
 				{
 					var name = $(this).data('name');
 					if (name == null) return;
-					var data = JSON.parse(decodeEntities(name));
 
+					// Empty Search Box
+					$("#searchBox").val("");
+
+					var data = JSON.parse(decodeEntities(name));
 					var json = 
 						{
 							action		: "downloadNewSong", 
@@ -120,7 +122,7 @@ socket.on('connect', function(data)
 		}
 	}
 
-	socket.on("SystemStatus", function(data)
+	socket.on("Status", function(data)
 	{
 		console.log("=============================================");
 		console.log("Incoming System Status");
@@ -136,6 +138,11 @@ socket.on('connect', function(data)
 		// Show Channel Name
 		var channelName = data.channelName;
 		$("#channelName").html("Channel : " + channelName);
+		$("#channelName").attr("ChannelName", channelName);
+
+		// Show Temperature
+		var temperature = data.temperature;
+		$("#temperature").html("System : " + temperature + " C");
 
 		// Display Channel List
 		var node = $('#menu_channel').next()
@@ -219,6 +226,20 @@ function showSongPanel(value)
 	}
 }
 
+function deleteChannel()
+{
+	var channelName = $("#channelName").attr("ChannelName");
+	if (confirm("Are you sure you want to delete " + channelName + "?"))
+	{
+		var json =
+		{
+			action		: "deleteChannel",
+			channelName :  channelName
+		}
+		console.log("Emitting : ", json);
+		socket.emit('songcontrol', json);
+	}
+}
 
 function openCreateChannelDialog()
 {

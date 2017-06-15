@@ -11,7 +11,7 @@
 			"appender": 
 			{
 				"type"      : "file",
-				"filename"  : "logs/system.log",
+				"filename"  : "public/logs/system.log",
 				"layout": 
 				{
 					"type": "colored",
@@ -28,7 +28,7 @@
 			"appender": 
 			{
 				"type"      : "file",
-				"filename"  : "logs/song_control.log",
+				"filename"  : "public/logs/song_control.log",
 				"layout": 
 				{
 					"type": "colored",

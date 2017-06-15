@@ -6019,3 +6019,10 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+
+.footerMenu {
+    text-align: center;
+	position: absolute !important;
+	bottom: 0;
+}
