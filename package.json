@@ -10,9 +10,9 @@
     "express": "3.1.1",
     "jade": "*",
     "socket.io": "1.7.2",
-    "node-omxplayer": "*",
+    "node-omxplayer": "0.4.1",
     "moment": "*",
-    "log4js": "*"
+    "log4js": "1.1.1"
   },
   "description": "For Youtube enable Pi server",
   "main": "app.js",
